@@ -104,6 +104,23 @@ section {
     display: none;
 }
 
+.social-links {
+    margin-top: 20px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s, filter 0.3s;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2) drop-shadow(2px 2px 6px rgba(0,0,0,0.7));
+}
+
 /* Fade-in animation */
 .fade-in {
     opacity: 0;
