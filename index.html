@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alus Bode</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=EB Garamond:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -19,13 +19,30 @@
 
     <main>
         <section class="welcome fade-in">
-            <h2>Welcome to Alus Bode</h2>
+            <h2>Welcome to ALUS BODE</h2>
             <p>Your local shop for the freshest live beer.<br>Taste the tradition with us!</p>
+            <!-- Carousel Section -->
+            <div class="carousel-container">
+                <img src="img/carousel/1.jpg" class="carousel-image active" alt="Slide 1">
+                <img src="img/carousel/2.jpg" class="carousel-image" alt="Slide 2">
+                <img src="img/carousel/23.jpg" class="carousel-image" alt="Slide 3">
+                <img src="img/carousel/123.jpg" class="carousel-image" alt="Slide 4">
+            </div>
         </section>
 
+        
+
+        <!-- Menu Section with buttons -->
         <section class="menu fade-in">
-            <h2>Our Beer Menu</h2>
-            <img src="img/menu_1.jpg" alt="Beer Menu" class="menu-img">
+            <h2>Our Menu</h2>
+            <div class="menu-buttons">
+                <button onclick="showMenu('drinks')">Drinks</button>
+                <button onclick="showMenu('food')">Food</button>
+            </div>
+            <div id="menu-content">
+                <img src="img/menu/menu1.jpg" alt="Drinks Menu" class="menu-img" id="drinks-menu">
+                <img src="img/menu/menu2.jpg" alt="Food Menu" class="menu-img hidden" id="food-menu">
+            </div>
         </section>
 
         <section class="contact fade-in">
@@ -34,5 +51,6 @@
         </section>
     </main>
 
+    <script src="mains.js"></script>
 </body>
 </html>
