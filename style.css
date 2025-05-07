@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     margin: 0;
     font-family: 'EB Garamond', serif;
@@ -6,6 +12,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: #000000;
+    height: 100%;
 }
 
 .box-opac {
@@ -18,8 +25,6 @@ body {
 
 .box-items {
     border: 3px solid black;
-    max-height: 200px;
-    padding: 10px;
 }
 
 .logo {
@@ -38,19 +43,74 @@ main {
     padding: 20px;
 }
 
+/* Main Menu Layout */
+.menu-container {
+    width: 100%;
+    max-width: 768px;
+    aspect-ratio: 3 / 4;
+    position: relative;
+    margin: 20px auto;
+  }
+  
+  .menu-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/menu/drinks/menu1-back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20% 8% 18% 8%; /* Top and bottom padding zones for decorative areas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .menu-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.2em;
+  }
+  
+  .menu-item {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    white-space: nowrap;
+  }
+  
+  .item-name {
+    flex: 1;
+  }
+  
+  .price {
+    font-weight: bold;
+    margin-left: 20px;
+  }
+
+.hidden {
+    display: none;
+}
+
 section {
     margin: 10px 10px 40px 10px;
     border: 2px solid black;
     text-align: center;
     background: rgba(255,255,255,0.6);
     padding: 20px;
-}
-
-.menu-img {
-    max-width: 90%;
-    height: auto;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-    margin-top: 20px;
 }
 
 .menu-buttons button {
@@ -73,34 +133,30 @@ section {
     position: relative;
     max-width: 800px;
     width: 100%;
-    height: 50vh; /* Fixed height */
+    height: 50vh;
     margin: 40px auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Optional: slight background */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
 }
 
 .carousel-image {
     max-height: 100%;
     max-width: 100%;
-    object-fit: contain; /* Makes image fit nicely inside */
+    object-fit: contain;
     object-position: center;
     position: absolute;
-    opacity: 0; /* Start hidden */
+    opacity: 0;
     transition: opacity 1s ease-in-out;
-    pointer-events: none; /* Prevents clicks on hidden images */
+    pointer-events: none;
 }
 
 .carousel-image.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-.hidden {
-    display: none;
 }
 
 .social-links {
@@ -126,7 +182,6 @@ section {
     animation: fadeIn 2s ease-in forwards;
 }
 
-/* FadeIn Keyframes */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -135,12 +190,29 @@ section {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .carousel-container {
-        height: 200px; /* Smaller height on tablets */
+        height: 200px;
     }
 }
 
 @media (max-width: 480px) {
     .carousel-container {
-        height: 150px; /* Smaller height on mobile phones */
+        height: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .menu-item img {
+        margin: 0 0 10px 0;
+    }
+
+    .price {
+        margin-left: 0;
+        margin-top: 10px;
     }
 }
