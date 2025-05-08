@@ -2,49 +2,109 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-body {
+  }
+  
+  body {
     margin: 0;
     font-family: 'EB Garamond', serif;
     letter-spacing: 1px;
-    background: url('img/background_wood3.gif');
+    background: url('img/background_wood.gif');
     background-size: cover;
     background-attachment: fixed;
     color: #000000;
     height: 100%;
-}
-
-.box-opac {
+  }
+  
+  .header {
     text-align: center;
-    padding: 10px;
-    background: url('img/background_wood3.gif');
-    background-size: cover;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.box-items {
-    border: 3px solid black;
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-}
-
-.title {
-    margin: 0;
-    font-size: 2.5em;
-    color: #000;
-    text-shadow: 4px 4px 6px #444444;
-}
-
-main {
-    padding: 20px;
-}
-
-/* Main Menu Layout */
-.menu-container {
+    padding: 20px 10px;
+  }
+  .box-opac {
+      text-align: center;
+      padding: 10px;
+      background: url('img/background_wood.gif');
+      background-size: cover;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .box-items {
+      border: 3px solid black;
+  }
+  
+  .logo {
+      width: 150px;
+      height: auto;
+  }
+  
+  .title {
+      margin: 0;
+      font-size: 2.5em;
+      color: #000;
+      text-shadow: 4px 4px 6px #444444;
+  }
+  
+  section {
+      margin: 10px 10px 40px 10px;
+      border: 2px solid black;
+      text-align: center;
+      background: rgba(255,255,255,0.6);
+      padding: 20px;
+  }
+  
+  .menu {
+      padding:0;
+      padding-top: 10px;
+  }
+  
+  .menu-buttons button {
+      margin: 5px;
+      padding: 5px 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border: 2px solid black;
+      background: rgba(255,255,255,0.6);
+      color: black;
+      transition: background-color 0.3s;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .menu-buttons button:hover {
+      background-color: #555;
+  }
+  
+  /* Carousel */
+  .carousel-container {
+      position: relative;
+      max-width: 800px;
+      width: 100%;
+      height: 50vh;
+      margin: 40px auto;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+  }
+  
+  .carousel-image {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      pointer-events: none;
+  }
+  
+  .carousel-image.active {
+      opacity: 1;
+      pointer-events: auto;
+  }
+  
+  /* Main Menu Layout */
+  .menu-container {
     width: 100%;
     max-width: 768px;
     aspect-ratio: 3 / 4;
@@ -55,7 +115,7 @@ main {
   .menu-bg {
     width: 100%;
     height: 100%;
-    background-image: url('img/menu/drinks/menu1-back.png');
+    background-image: url('img/menu/menu-back.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -79,13 +139,14 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 1.2em;
+    gap: 0.6em;
   }
   
   .menu-item {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 5px;
     border-radius: 8px;
+    border-bottom: 2px dotted black;
     display: flex;
     justify-content: space-between;
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -95,124 +156,59 @@ main {
   .item-name {
     flex: 1;
   }
+  .beer-logo {
+      width: 25px;
+      height: auto;
+  }
   
   .price {
     font-weight: bold;
-    margin-left: 20px;
+    margin-left: 10px;
   }
-
-.hidden {
-    display: none;
-}
-
-section {
-    margin: 10px 10px 40px 10px;
-    border: 2px solid black;
-    text-align: center;
-    background: rgba(255,255,255,0.6);
-    padding: 20px;
-}
-
-.menu-buttons button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    cursor: pointer;
-    border: none;
-    background-color: #333;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-.menu-buttons button:hover {
-    background-color: #555;
-}
-
-/* Carousel */
-.carousel-container {
-    position: relative;
-    max-width: 800px;
-    width: 100%;
-    height: 50vh;
-    margin: 40px auto;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-.carousel-image {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    object-position: center;
-    position: absolute;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    pointer-events: none;
-}
-
-.carousel-image.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.social-links {
-    margin-top: 20px;
-}
-
-.social-icon img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s, filter 0.3s;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
-}
-
-.social-icon img:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2) drop-shadow(2px 2px 6px rgba(0,0,0,0.7));
-}
-
-/* Fade-in animation */
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 2s ease-in forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .carousel-container {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-container {
-        height: 150px;
-    }
-}
-
-@media (max-width: 600px) {
-    .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
-    }
-
-    .menu-item img {
-        margin: 0 0 10px 0;
-    }
-
-    .price {
-        margin-left: 0;
-        margin-top: 10px;
-    }
-}
+  
+  .social-links {
+      margin-top: 20px;
+  }
+  
+  .social-icon img {
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      transition: transform 0.3s, filter 0.3s;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+  }
+  
+  .social-icon img:hover {
+      transform: scale(1.2);
+      filter: brightness(1.2) drop-shadow(2px 2px 6px rgba(0,0,0,0.7));
+  }
+  
+  .hidden {
+      display: none;
+  }
+  
+  /* Fade-in animation */
+  .fade-in {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+  }
+  
+  @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .carousel-container {
+          height: 200px;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .carousel-container {
+          height: 150px;
+      }
+  }
+  
+  
