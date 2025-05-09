@@ -1,36 +1,33 @@
-// Carousel logic
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-image');
-const totalSlides = slides.length;
+document.addEventListener('DOMContentLoaded', () => {
+    // === Carousel Logic ===
+    const slides = document.querySelectorAll('.carousel-image');
+    let currentSlide = 0;
 
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        if (i === index) {
-            slide.classList.add('active');
-        } else {
-            slide.classList.remove('active');
-        }
-    });
-}
+    const showSlide = (index) => {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+    };
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-}
+    const nextSlide = () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    };
 
-// Start carousel
-setInterval(nextSlide, 3000); // Change image every 3 seconds
-
-// Menu switching logic
-function showMenu(menu) {
-    const drinks = document.getElementById('drinks-menu');
-    const food = document.getElementById('food-menu');
-
-    if (menu === 'drinks') {
-        drinks.classList.remove('hidden');
-        food.classList.add('hidden');
-    } else {
-        food.classList.remove('hidden');
-        drinks.classList.add('hidden');
+    if (slides.length > 0) {
+        showSlide(currentSlide);
+        setInterval(nextSlide, 3000); // Switch every 3 seconds
     }
-}
+
+    // === Menu Switching Logic ===
+    const drinksMenu = document.getElementById('drinks-menu');
+    const foodMenu = document.getElementById('food-menu');
+
+    window.showMenu = (menu) => {
+        if (!drinksMenu || !foodMenu) return;
+
+        const isDrinks = menu === 'drinks';
+        drinksMenu.classList.toggle('hidden', !isDrinks);
+        foodMenu.classList.toggle('hidden', isDrinks);
+    };
+});
