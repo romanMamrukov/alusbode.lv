@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Alus Bode</title>
+  <link rel="stylesheet" href="test-style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="box-opac">
+      <div class="box-items">
+        <div id="myNav" class="nav-overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#contacts">Contacts</a>
+  </div>
+</div>
+        <span class="nav-icon" onclick="openNav()">&#9776;</span>
+        <img src="img/logo.png" alt="Alus Bode Logo" class="logo" />
+        <h1 class="title">ALUS BODE</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="welcome fade-in">
+      <h2>Welcome to ALUS BODE</h2>
+      <p>Your local shop for the freshest live beer.<br />Taste the tradition with us!</p>
+
+      <div class="carousel-container" role="region" aria-label="Image carousel">
+        <img src="img/carousel/1.jpg" class="carousel-image active" alt="Slide 1">
+        <img src="img/carousel/2.jpg" class="carousel-image" alt="Slide 2">
+        <img src="img/carousel/23.jpg" class="carousel-image" alt="Slide 3">
+        <img src="img/carousel/123.jpg" class="carousel-image" alt="Slide 4">
+        <img src="img/carousel/4.jpg" class="carousel-image" alt="Slide 5">
+        <img src="img/carousel/5.jpg" class="carousel-image" alt="Slide 6">
+        <img src="img/carousel/6.jpg" class="carousel-image" alt="Slide 7">
+        <img src="img/carousel/7.jpg" class="carousel-image" alt="Slide 8">
+        <img src="img/carousel/8.jpg" class="carousel-image" alt="Slide 9">
+        <img src="img/carousel/9.jpg" class="carousel-image" alt="Slide 10">
+        <img src="img/carousel/10.jpg" class="carousel-image" alt="Slide 11">
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section fade-in">
+      <h2>Our Menu</h2>
+      <div class="menu-buttons">
+        <button type="button" onclick="showMenu('drinks')">Drinks</button>
+        <button type="button" onclick="showMenu('food')">Food</button>
+      </div>
+
+      <!-- Menu Top Section (Header) -->
+      <div class="menu-header">
+        <img src="img/menu/menu-back-top.png" alt="Menu Header Image" class="menu-header-img">
+      </div>
+
+      <!-- Main Menu Section -->
+       <!-- Drinks Menu -->
+      <div id="drinks-menu" class="menu-container">
+        <div class="menu-main">
+          <div class="menu-category">
+            <h3>Beer</h3>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="Beer" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Piebalgas Gaišais - 5.6%</span>
+                <span class="price">3.60 € (0.5L)</span>
+                <span class="price">6.00 € (1L)</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/bralis_gaisais_nefilt.png" alt="Beer" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Brālis Gaišais Nefiltr. - 5.3%</span>
+                <span class="price">3.00 € (0.5L)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <h3>Cider & Kvass</h3>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/darza bumbieris sidrs.png" alt="Cider" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Sidrs Somersby - 4.5%</span>
+                <span class="price">4.80 € (0.5L)</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/Ilgucema_kvass.png" alt="Kvass" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Kvass</span>
+                <span class="price">1.50 € (0.5L)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="food-menu" class="menu-container hidden">
+        <div class="menu-main">
+          <div class="menu-category">
+            <h3>Burgers</h3>
+            <div class="menu-item">
+              <img src="img/logo.png" alt="Burger" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Burger</span>
+                <span class="price">3.00 €</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <h3>Snacks</h3>
+            <div class="menu-item">
+              <img src="img/logo.png" alt="Cheburek" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Cheburek</span>
+                <span class="price">3.20 €</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Bottom Section -->
+      <div class="menu-footer">
+        <img src="img/menu/menu-back-bot.png" alt="Menu Footer Image" class="menu-footer-img">
+      </div>
+    </section>
+
+    <section class="contact fade-in">
+      <h2>Contact Us</h2>
+      <p>Visit us or call:<br />Phone: +371 00000000<br />Address: Tilta iela 2, Riga, Latvia, 1005</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/alusbode" target="_blank" rel="noopener" class="social-icon">
+          <img src="img/icons/face.png" alt="Facebook" />
+        </a>
+        <a href="https://www.instagram.com/alusbode" target="_blank" rel="noopener" class="social-icon">
+          <img src="img/icons/insta.png" alt="Instagram" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script src="mains.js" defer></script>
+</body>
+
+</html>
