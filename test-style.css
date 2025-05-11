@@ -196,6 +196,13 @@ section {
 
 .menu-category {
     margin-bottom: 2rem;
+    text-align: center;
+}
+
+.menu-category img {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
 }
 
 .menu-item {
@@ -209,7 +216,7 @@ section {
 }
 
 .menu-item img {
-    width: 75px;
+    width: 60px;
     height: auto;
     object-fit: contain;
 }
@@ -222,13 +229,12 @@ section {
 }
 
 .item-name {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     font-weight: bold;
 }
 
 .price {
     font-size: 1rem;
-    color: #555;
 }
 
 /* Menu Footer Section */
