@@ -176,22 +176,28 @@ section {
 
 /* Menu Top Section */
 .menu-header {
-    height: 230px;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .menu-header-img {
+    display: block;
     width: 100%;
+    height: auto;
+    max-width: 100%;
     object-fit: contain;
 }
 
 .menu-container {
-    background: url('img/menu/menu-back-cent.png') repeat-y;
-    background-size: cover;
+    background: url(img/menu/menu-back-center.png) repeat-y center center;
+    background-size: contain;
+    margin-right: 3px;
 }
 
 /* Menu Main Section */
 .menu-main {
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .menu-category {
@@ -239,12 +245,11 @@ section {
 
 /* Menu Footer Section */
 .menu-footer {
-
+    height: auto;
 }
 
 .menu-footer-img {
     width: 100%;
-    height: auto;
     object-fit: cover;
 }
 
@@ -254,19 +259,43 @@ section {
 }
 
 @media (max-width: 768px) {
-    .menu-header{
-        height: auto;
+    .menu-main {
+    width: 100%;
+    display: block;
+    padding: 0 1rem;
     }
 
     .menu-container{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .menu-header {
+        width: 100%;
+        display: block;
+    }
+
+    .menu-header-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .menu-container {
         background: url('img/menu/menu-back-center.png') repeat-y center center;
         background-size: contain;
+        padding: 0;
+        width: 100%;
     }
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
     .menu-main {
         margin-top: 5.2rem;
+
     }
 }
 
