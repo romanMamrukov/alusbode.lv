@@ -380,3 +380,16 @@ section {
     transform: scale(1.1);
     filter: brightness(1.2);
 }
+
+.footer p {
+    font-size: 0.8rem;
+    color:#000;
+}
+.simple-a {
+    font-size: 0.7rem !important;
+    text-decoration: none;
+    color:#000;
+}
+.simple-a:hover {
+    text-shadow: 2px 2px 4px #444;
+}
