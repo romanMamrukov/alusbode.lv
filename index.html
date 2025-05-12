@@ -1,30 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="lv">
 
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Alus Bode</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Alus Bode - Dzīvā alus veikals</title>
+  <meta name="description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti.">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.alusbode.lv/" />
+  <meta property="og:title" content="Alus Bode - Dzīvā alus veikals" />
+  <meta property="og:description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti." />
+  <meta property="og:image" content="https://www.alusbode.lv/images/menu-background.jpg" />
+
+  <!-- Twitter 
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alus Bode — Alus, Ēdieni un Atmosfēra" />
+  <meta name="twitter:description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru." />
+  <meta name="twitter:image" content="https://www.alusbode.lv/images/menu-background.jpg" />
+  -->
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="test-style.css" />
+  <script src="script.js" defer></script>
+  <link rel="canonical" href="https://www.alusbode.lv/" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+    
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bar",
+    "name": "Alus Bode",
+    "image": "https://www.alusbode.lv/images/menu-background.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Latvia",
+      "addressCountry": "LV"
+    },
+    "servesCuisine": ["Latvian", "Beer", "Bar food"],
+    "url": "https://www.alusbode.lv",
+    "menu": "https://www.alusbode.lv/#menu",
+    "telephone": "+37125313331",
+    "priceRange": "€",
+    "menu": {
+      "@type": "Menu",
+      "name": "Dzērienu un Ēdienu Karte",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Alus",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Piebalgas Gaišais",
+              "description": "Gaišais alus ar maigu garšu",
+              "offers": {
+                "@type": "Offer",
+                "price": "3.60",
+                "priceCurrency": "EUR"
+              }
+            }
+          }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Sidrs / Kvas",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Kvass",
+              "description": "Svaigs Kvass",
+              "offers": {
+                "@type": "Offer",
+                "price": "1.50",
+                "priceCurrency": "EUR"
+              }
+            }
+          ]
+        }
+      ]
+    "openingHours": [
+      "Wed-Sun 11:00-22:00"
+    ]
+  }
+  </script>
 </head>
 
 <body>
   <header class="header">
     <div class="box-opac">
       <div class="box-items">
-        <img src="img/logo.png" alt="Alus Bode Logo" class="logo" />
+        <div id="myNav" class="nav-overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <div class="overlay-content">
+            <a href="#about">About</a>
+            <a href="#menu">Menu</a>
+            <a href="#contacts">Contacts</a>
+          </div>
+        </div>
+        <span class="nav-icon" onclick="openNav()">&#9776;</span>
+        <img src="img/logo.png" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
         <h1 class="title">ALUS BODE</h1>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="welcome fade-in">
+    <section class="welcome fade-in" id="about">
       <h2>Welcome to ALUS BODE</h2>
       <p>Your local shop for the freshest live beer.<br />Taste the tradition with us!</p>
 
-      <div class="carousel-container" role="region" aria-label="Image carousel">-
+      <div class="carousel-container" role="region" aria-label="Image carousel">
         <img src="img/carousel/1.jpg" class="carousel-image active" alt="Slide 1">
         <img src="img/carousel/2.jpg" class="carousel-image" alt="Slide 2">
         <img src="img/carousel/23.jpg" class="carousel-image" alt="Slide 3">
@@ -39,135 +129,163 @@
       </div>
     </section>
 
-    <!-- Menu Section with buttons -->
-    <section class="menu-section fade-in">
+    <!-- Menu Section -->
+    <section class="menu-section fade-in" id="menu">
       <h2>Our Menu</h2>
       <div class="menu-buttons">
         <button type="button" onclick="showMenu('drinks')">Drinks</button>
         <button type="button" onclick="showMenu('food')">Food</button>
       </div>
-      <!--Drinks Menu-->
+
+      <!-- Menu Top Section (Header) -->
+      <div class="menu-header">
+        <img src="img/menu/menu-back-top.png" alt="Menu Header Image" class="menu-header-img">
+      </div>
+
+      <!-- Main Menu Section -->
+      <!-- Drinks Menu -->
       <div id="drinks-menu" class="menu-container">
-        <div class="menu-bg">
-          <div class="menu-overlay">
-            <div class="menu-grid">
-              <!--Beer List-->
-              <div class="menu-item">
-                <img src="img/menu/drinks/beer_glass.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Alus</span>
-                <span class="price">| 0.5L | 1L | 1.5L | 2L | 3L |</span>
+        <div class="menu-main">
+          <div class="menu-category">
+            <h2><img src="img/menu/drinks/beer_glass.png" alt="Beer glass Logo">Beer</h2>
+            <!--Beer List-->
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="piebalgas alus logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Piebalgas Gaišais - 5.6%</span>
+                <span class="price">3.60 € (0.5L)</span>
+                <span class="price">6.00 € (1L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Piebalgas Gaišais - 5.6% - 0.5L</span>
-                <span class="price">3.60 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/bralis_gaisais_nefilt.png" alt="Bralis gaisais logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Brālis Gaišais Nefiltr. - 5.3%</span>
+                <span class="price">2.90 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/bralis_gaisais_nefilt.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Brālis Gaišais Nefiltr. - 5.3% - 0.5L</span>
-                <span class="price">3.00 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/rigas bruveris nefilt.png" alt="Rigas bruveris logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Rigas Bruveris Nefiltr. - 5.2%</span>
+                <span class="price">2.80 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/bralis_gaisais_nefilt.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Brālis Gaišais - 5.3% - 0.5L</span>
-                <span class="price">2.90 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/Brengulu_gaisais.png" alt="Brengulu gaisais logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Brengulu Gaišais Nefiltr. - 5.5%</span>
+                <span class="price">3.50 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/rigas bruveris nefilt.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Rigas Bruveris Nefiltr. - 5.2% - 0.5L</span>
-                <span class="price">2.80 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/uzavas_gaisais.png" alt="Užavas gaisais logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Uzavas Gaišais - 4.6%</span>
+                <span class="price">4.00 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/Brengulu_gaisais.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Brengulu Gaišais Nefiltr. - 5.5% - 0.5L</span>
-                <span class="price">3.50 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/Ilgucema_Medalus.png" alt="Ilgucema Medalus logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Medalus Ilguciema - 5.5%</span>
+                <span class="price">2.90 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/uzavas_gaisais.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Uzavas Gaišais - 4.6% - 0.5L</span>
-                <span class="price">4.00 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/dzervenu_ilguciema.png" alt="Dzervenu Ilguciema logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Dzervenu Ilguciema - 5%</span>
+                <span class="price">3.30 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/Ilgucema_Medalus.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Medalus Ilguciema - 5.5% - 0.5L</span>
-                <span class="price">2.90 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/Brengulu_tumsais.png" alt="Brengulu tumsais log" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Brengulu Tumšais - 5.5%</span>
+                <span class="price">3.50 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/dzervenu_ilguciema.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Dzervenu Ilguciema - 5% - 0.5L</span>
-                <span class="price">3.30 €</span>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="Piebalgas alus logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Kraslavas Gaišais Nefiltr. - 5%</span>
+                <span class="price">2.80 € (0.5L)</span>
               </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/Brengulu_tumsais.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Brengulu Tumšais - 5.5% - 0.5L</span>
-                <span class="price">3.50 €</span>
-              </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/kraslavas_gais_nefilt.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Kraslavas Gaišais Nefiltr. - 5% - 0.5L</span>
-                <span class="price">2.80 €</span>
-              </div>
-              <!--Beer List End-->
-              <!--Cider / Kvass List-->
-              <div class="menu-item">
-                <img src="img/menu/drinks/cider_glass.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Cidrs, Kvass</span>
-                <span class="price">| 0.3L | 0.5L | 1L | 1.5L | 2L | 3L |</span>
-              </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/darza bumbieris sidrs.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Sidrs Somersby - 4.5% - 0.5L</span>
-                <span class="price">4.80 €</span>
-              </div>
-              <div class="menu-item">
-                <img src="img/menu/drinks/drink_logos/Ilgucema_kvass.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Kvass - 0.5L</span>
-                <span class="price">1.50 €</span>
-              </div>
-              <!--Cider / Kvass List End-->
-              <!--Italian Drinks List-->
-              <div class="menu-item">
-                <img src="img/menu/drinks/wine_glass.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">Italijas Lejamais</span>
-                <span class="price">| 0.5L | 1L | 1.5L | 2L | 3L |</span>
-              </div>
-              <!--Italian Drinks List End-->
             </div>
           </div>
+          <!--Beer List End-->
+          <!--Cider / Kvass List-->
+          <div class="menu-category">
+            <h2><img src="img/menu/drinks/cider_glass.png" alt="Cider glass logo">Cidrs, Kvass</h2>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/darza bumbieris sidrs.png" alt="Darza Bumbieris Sider logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Sidrs Somersby - 4.5%</span>
+                <span class="price">4.80 € (0.5L)</span>
+              </div>
+            </div>
+            <div class="menu-item">
+              <img src="img/menu/drinks/drink_logos/Ilgucema_kvass.png" alt="Ilgucema Kvass logo" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Kvass</span>
+                <span class="price">1.50 € (0.5L)</span>
+              </div>
+            </div>
+          </div>
+          <!--Cider / Kvass List End-->
+          <!--Italian Drinks List-->
         </div>
       </div>
-      <!--Food Menu-->
+
       <div id="food-menu" class="menu-container hidden">
-        <div class="menu-bg">
-          <div class="menu-overlay">
-            <div class="menu-grid">
-              <!--Food List-->
-              <div class="menu-item">
-                <img src="img/logo.png" alt="Alus Bode Logo" class="beer-logo">
-                <span class="item-name">BURGER</span>
+        <div class="menu-main">
+          <div class="menu-category">
+            <h3>Burgers</h3>
+            <div class="menu-item">
+              <img src="img/logo.png" alt="Burger" class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Burger</span>
                 <span class="price">3.00 €</span>
               </div>
-              <div class="menu-item">
-                <img src="img/logo.png" alt="Alus Bode Logo" class="beer-logo">
+            </div>
+          </div>
+
+          <div class="menu-category">
+            <h3>Snacks</h3>
+            <div class="menu-item">
+              <img src="img/logo.png" alt="Cheburek" class="menu-img">
+              <div class="item-details">
                 <span class="item-name">Cheburek</span>
                 <span class="price">3.20 €</span>
               </div>
-              <!--Food List End-->
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Menu Bottom Section -->
+      <div class="menu-footer">
+        <img src="img/menu/menu-back-bot.png" alt="Menu Footer Image" class="menu-footer-img">
+      </div>
     </section>
 
-    <section class="contact fade-in">
+    <section class="contact fade-in" id="contacts">
       <h2>Contact Us</h2>
-      <p>Visit us or call:<br />Phone: +371 00000000<br />Address: Tilta iela 2, Riga, Latvia, 1005</p>
+      <p>Visit us or call:<br />Phone: +371 25 313 331<br />Address: Tilta iela 2, Riga, Latvia, 1005</p>
+      <div style="position: relative;">
+        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;"><iframe
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" loading="lazy"
+            allowfullscreen src="https://maps.google.com/maps?q=Tilta+iela+2%2C+Riga%2C+Latvia&output=embed"></iframe>
+        </div><a href="https://tariffcalculator.us/" rel="noopener" target="_blank"
+          style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">tariffcalculator.us</a>
+      </div>
       <div class="social-links">
         <a href="https://www.facebook.com/alusbode" target="_blank" rel="noopener" class="social-icon">
-          <img src="img/icons/face.png" alt="Facebook" />
+          <img src="img/icons/face.png" alt="Facebook logo" />
         </a>
         <a href="https://www.instagram.com/alusbode" target="_blank" rel="noopener" class="social-icon">
-          <img src="img/icons/insta.png" alt="Instagram" />
+          <img src="img/icons/insta.png" alt="Instagram logo" />
         </a>
       </div>
     </section>
@@ -175,7 +293,5 @@
 
   <script src="mains.js" defer></script>
 </body>
-
-</html>
 
 </html>

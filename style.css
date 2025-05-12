@@ -35,6 +35,70 @@ body {
     border: 3px solid black;
 }
 
+/*Nav menu */
+.nav-icon {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: url('img/background_wood.gif') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    transition: 0.5s;
+    opacity: 0.9;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.nav-overlay a {
+    padding: 8px;
+    font-size: 36px;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+}
+
+.nav-overlay a:hover,
+.nav-overlay a:focus {
+    text-shadow: 1px 1px #777777;
+}
+
+.nav-overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .nav-overlay a {
+        font-size: 20px
+    }
+
+    .nav-overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
 .logo {
     width: 150px;
     height: auto;
@@ -110,74 +174,129 @@ section {
     background-color: #333;
 }
 
-.menu-container {
-    margin: 1.5rem auto;
-    max-width: 768px;
+/* Menu Top Section */
+.menu-header {
     width: 100%;
+    height: auto;
     display: block;
 }
 
-.menu-bg {
-    background: url('img/menu/menu-back.png') no-repeat center center;
+.menu-header-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.menu-container {
+    background: url(img/menu/menu-back-center.png) repeat-y center center;
     background-size: contain;
-    width: 100%;
-    min-height: 70dvh;
-    position: relative;
-    overflow: hidden;
+    margin-right: 3px;
 }
 
-.menu-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    inset: 0;
-    padding: 25% 10% 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    overflow: hidden;
-    overflow-y: auto;
+/* Menu Main Section */
+.menu-main {
+    padding: 3rem;
 }
 
-.menu-grid {
-    width: 100%;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0.15em;
-    overflow-y: auto;
-    max-height: 100%;
+.menu-category {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.menu-category img {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
 }
 
 .menu-item {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 0.6rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 2px solid #333;
+    border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.6);
-    border-bottom: 1px dashed black;
-    border-radius: 5px;
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
 }
 
-.beer-logo {
-    width: 30px;
+.menu-item img {
+    width: 60px;
     height: auto;
-    margin-right: 0.5rem;
+    object-fit: contain;
+}
+
+.item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .item-name {
-    flex: 1;
-    text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 0.9rem;
+    font-weight: bold;
 }
 
 .price {
-    font-weight: bold;
-    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Menu Footer Section */
+.menu-footer {
+    height: auto;
+}
+
+.menu-footer-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Hidden Menu */
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-main {
+    width: 100%;
+    display: block;
+    padding: 0 1rem;
+    }
+
+    .menu-container{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .menu-header {
+        width: 100%;
+        display: block;
+    }
+
+    .menu-header-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .menu-container {
+        background: url('img/menu/menu-back-center.png') repeat-y center center;
+        background-size: contain;
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .menu-main {
+        margin-top: 5.2rem;
+
+    }
 }
 
 /* Contact & Socials */
@@ -213,39 +332,4 @@ section {
 /* Utility */
 .hidden {
     display: none !important;
-}
-
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .menu-overlay {
-        padding: 40% 5% 15%;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .carousel-container {
-        aspect-ratio: 4 / 3;
-    }
-
-    .beer-logo {
-        width: 20px;
-    }
-
-    .menu-item {
-        font-size: 0.9rem;
-    }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-    .menu-overlay {
-        padding: 10% 5% 5%;
-    }
-
-    .menu-grid {
-        max-height: unset;
-    }
 }
