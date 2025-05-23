@@ -13,81 +13,89 @@
   <meta property="og:url" content="https://www.alusbode.lv/" />
   <meta property="og:title" content="Alus Bode - Dzīvā alus veikals" />
   <meta property="og:description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti." />
-  <meta property="og:image" content="https://www.alusbode.lv/images/menu-background.jpg" />
+  <meta property="og:image" content="https://www.alusbode.lv/assets/assets/desktop/logo/background_wood@3x.webp" />
 
   <!-- Twitter 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Alus Bode — Alus, Ēdieni un Atmosfēra" />
   <meta name="twitter:description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru." />
-  <meta name="twitter:image" content="https://www.alusbode.lv/images/menu-background.jpg" />
+  <meta name="twitter:image" content="https://www.alusbode.lv/assets/desktop/logo/background_wood@3x.webp" />
   -->
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <script src="mains.js" defer></script>
   <link rel="canonical" href="https://www.alusbode.lv/" />
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
     
   <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Bar",
-    "name": "Alus Bode",
-    "image": "https://www.alusbode.lv/images/menu-background.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Latvia",
-      "addressCountry": "LV"
-    },
-    "servesCuisine": ["Latvian", "Beer", "Bar food"],
-    "url": "https://www.alusbode.lv",
-    "menu": "https://www.alusbode.lv/#menu",
-    "telephone": "+37125313331",
-    "priceRange": "€",
-    "menu": {
-      "@type": "Menu",
-      "name": "Dzērienu un Ēdienu Karte",
-      "hasMenuSection": [
-        {
-          "@type": "MenuSection",
-          "name": "Alus",
-          "hasMenuItem": [
-            {
-              "@type": "MenuItem",
-              "name": "Piebalgas Gaišais",
-              "description": "Gaišais alus ar maigu garšu",
-              "offers": {
-                "@type": "Offer",
-                "price": "3.60",
-                "priceCurrency": "EUR"
-              }
-            }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bar",
+  "name": "Alus Bode",
+  "image": "https://www.alusbode.lv/assets/desktop/logo/background_wood@3x.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Latvia",
+    "addressCountry": "LV"
+  },
+  "servesCuisine": ["Latvian", "Beer", "Bar food"],
+  "url": "https://www.alusbode.lv",
+  "telephone": "+37125313331",
+  "priceRange": "€",
+  "hasMenu": {
+    "@type": "Menu",
+    "name": "Dzērienu un Ēdienu Karte",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Alus",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Piebalgas Gaišais"
           }
-          ]
-        },
-        {
-          "@type": "MenuSection",
-          "name": "Sidrs / Kvas",
-          "hasMenuItem": [
-            {
-              "@type": "MenuItem",
-              "name": "Kvass",
-              "description": "Svaigs Kvass",
-              "offers": {
-                "@type": "Offer",
-                "price": "1.50",
-                "priceCurrency": "EUR"
-              }
-            }
-          ]
-        }
-      ]
-    "openingHours": [
-      "Wed-Sun 11:00-22:00"
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Alus",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Brālis Gaišais Nefiltr."
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Alus",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Rīgas Brūveris Nefiltr."
+          }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Sidrs / Kvas",
+        "hasMenuItem": [
+          {
+            "@type": "MenuItem",
+            "name": "Kvass",
+            "description": "Svaigs Kvass"
+          }
+        ]
+      }
     ]
-  }
-  </script>
+  },
+  "openingHours": [
+    "Wed-Sun 11:00-22:00"
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -97,13 +105,15 @@
         <div id="myNav" class="nav-overlay">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div class="overlay-content">
-            <a href="#about">About</a>
-            <a href="#menu">Menu</a>
-            <a href="#contacts">Contacts</a>
+            <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
+            <h2 class="title">ALUS BODE</h2>
+            <a href="#about">Par mums</a>
+            <a href="#menu">Ēdienkarte</a>
+            <a href="#contacts">Kontakti</a>
           </div>
         </div>
         <span class="nav-icon" onclick="openNav()">&#9776;</span>
-        <img src="img/logo.png" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
+        <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
         <h1 class="title">ALUS BODE</h1>
       </div>
     </div>
@@ -111,35 +121,36 @@
 
   <main>
     <section class="welcome fade-in" id="about">
-      <h2>Welcome to ALUS BODE</h2>
-      <p>Your local shop for the freshest live beer.<br />Taste the tradition with us!</p>
+      <h2>Laipni lūdzam</h2>
+      <h2>ALUS BODE</h2>
+      <p>Jūsu vietējais veikals ar svaigāko dzīvo alu.<br />Nogaršojiet tradīcijas kopā ar mums!</p>
 
       <div class="carousel-container" role="region" aria-label="Image carousel">
-        <img src="img/carousel/1.jpg" class="carousel-image active" alt="Slide 1">
-        <img src="img/carousel/2.jpg" class="carousel-image" alt="Slide 2">
-        <img src="img/carousel/23.jpg" class="carousel-image" alt="Slide 3">
-        <img src="img/carousel/123.jpg" class="carousel-image" alt="Slide 4">
-        <img src="img/carousel/4.jpg" class="carousel-image" alt="Slide 5">
-        <img src="img/carousel/5.jpg" class="carousel-image" alt="Slide 6">
-        <img src="img/carousel/6.jpg" class="carousel-image" alt="Slide 7">
-        <img src="img/carousel/7.jpg" class="carousel-image" alt="Slide 8">
-        <img src="img/carousel/8.jpg" class="carousel-image" alt="Slide 9">
-        <img src="img/carousel/9.jpg" class="carousel-image" alt="Slide 10">
-        <img src="img/carousel/10.jpg" class="carousel-image" alt="Slide 11">
+        <img src="assets/desktop/carousel/1@3x.webp" class="carousel-image active" alt="Slide 1">
+        <img src="assets/desktop/carousel/2@3x.webp" class="carousel-image" alt="Slide 2">
+        <img src="assets/desktop/carousel/23@3x.webp" class="carousel-image" alt="Slide 3">
+        <img src="assets/desktop/carousel/123@3x.webp" class="carousel-image" alt="Slide 4">
+        <img src="assets/desktop/carousel/4@3x.webp" class="carousel-image" alt="Slide 5">
+        <img src="assets/desktop/carousel/5@3x.webp" class="carousel-image" alt="Slide 6">
+        <img src="assets/desktop/carousel/6@3x.webp" class="carousel-image" alt="Slide 7">
+        <img src="assets/desktop/carousel/7@3x.webp" class="carousel-image" alt="Slide 8">
+        <img src="assets/desktop/carousel/8@3x.webp" class="carousel-image" alt="Slide 9">
+        <img src="assets/desktop/carousel/9@3x.webp" class="carousel-image" alt="Slide 10">
+        <img src="assets/desktop/carousel/10@3x.webp" class="carousel-image" alt="Slide 11">
       </div>
     </section>
 
     <!-- Menu Section -->
     <section class="menu-section fade-in" id="menu">
-      <h2>Our Menu</h2>
+      <h2>Mūsu ēdienkarte</h2>
       <div class="menu-buttons">
-        <button type="button" onclick="showMenu('drinks')">Drinks</button>
-        <button type="button" onclick="showMenu('food')">Food</button>
+        <button type="button" onclick="showMenu('drinks')">Dzērieni</button>
+        <button type="button" onclick="showMenu('food')">Ēdieni</button>
       </div>
 
       <!-- Menu Top Section (Header) -->
       <div class="menu-header">
-        <img src="img/menu/menu-back-top.png" alt="Menu Header Image" class="menu-header-img">
+        <img src="assets/desktop/menu/menu-back-top@3x.webp" alt="Menu Header Image" class="menu-header-img">
       </div>
 
       <!-- Main Menu Section -->
@@ -147,10 +158,10 @@
       <div id="drinks-menu" class="menu-container">
         <div class="menu-main">
           <div class="menu-category">
-            <h3><img src="img/menu/drinks/beer_glass.png" alt="Beer glass Logo">Beer</h3>
+            <h3><img src="assets/desktop/logo/beer_glass@3x.webp" alt="Beer glass Logo">Beer</h3>
             <!--Beer List-->
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="piebalgas alus logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/piebalgas_alus@3x.webp" alt="piebalgas alus logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Piebalgas Gaišais - 5.6%</span>
                 <span class="price">3.60 € (0.5L)</span>
@@ -158,56 +169,56 @@
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/bralis_gaisais_nefilt.png" alt="Bralis gaisais logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/bralis_gaisais_nefilt@3x.webp" alt="Bralis gaisais logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brālis Gaišais Nefiltr. - 5.3%</span>
                 <span class="price">2.90 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/rigas bruveris nefilt.png" alt="Rigas bruveris logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/rigas bruveris nefilt@3x.webp" alt="Rigas bruveris logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Rigas Bruveris Nefiltr. - 5.2%</span>
                 <span class="price">2.80 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/Brengulu_gaisais.png" alt="Brengulu gaisais logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Brengulu_gaisais@3x.webp" alt="Brengulu gaisais logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brengulu Gaišais Nefiltr. - 5.5%</span>
                 <span class="price">3.50 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/uzavas_gaisais.png" alt="Užavas gaisais logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/uzavas_gaisais@3x.webp" alt="Užavas gaisais logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Uzavas Gaišais - 4.6%</span>
                 <span class="price">4.00 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/Ilgucema_Medalus.png" alt="Ilgucema Medalus logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Ilgucema_Medalus@3x.webp" alt="Ilgucema Medalus logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Medalus Ilguciema - 5.5%</span>
                 <span class="price">2.90 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/dzervenu_ilguciema.png" alt="Dzervenu Ilguciema logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/dzervenu_ilguciema@3x.webp" alt="Dzervenu Ilguciema logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Dzervenu Ilguciema - 5%</span>
                 <span class="price">3.30 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/Brengulu_tumsais.png" alt="Brengulu tumsais log" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Brengulu_tumsais@3x.webp" alt="Brengulu tumsais log" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brengulu Tumšais - 5.5%</span>
                 <span class="price">3.50 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/piebalgas_alus.png" alt="Piebalgas alus logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/piebalgas_alus@3x.webp" alt="Piebalgas alus logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Kraslavas Gaišais Nefiltr. - 5%</span>
                 <span class="price">2.80 € (0.5L)</span>
@@ -217,16 +228,16 @@
           <!--Beer List End-->
           <!--Cider / Kvass List-->
           <div class="menu-category">
-            <h3><img src="img/menu/drinks/cider_glass.png" alt="Cider glass logo">Cidrs, Kvass</h3>
+            <h3><img src="assets/desktop/logo/cider_glass@3x.webp" alt="Cider glass logo">Cidrs, Kvass</h3>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/darza bumbieris sidrs.png" alt="Darza Bumbieris Sider logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/darza bumbieris sidrs@3x.webp" alt="Darza Bumbieris Sider logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Sidrs Somersby - 4.5%</span>
                 <span class="price">4.80 € (0.5L)</span>
               </div>
             </div>
             <div class="menu-item">
-              <img src="img/menu/drinks/drink_logos/Ilgucema_kvass.png" alt="Ilgucema Kvass logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Ilgucema_kvass@3x.webp" alt="Ilgucema Kvass logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Kvass</span>
                 <span class="price">1.50 € (0.5L)</span>
@@ -235,72 +246,74 @@
           </div>
           <!--Cider / Kvass List End-->
           <!--Italian Drinks List-->
+          <p>ALKOHOLA LIETOŠANAI IR NEGATĪVA IETEKME.</p>
+          <p>TĀ PĀRDOŠAN, IEGĀDĀŠANĀS UN NODOŠANA NEPILNGADĪGĀM PERSONĀM IR AIZLIEGTA!</p>
         </div>
       </div>
 
       <div id="food-menu" class="menu-container hidden">
         <div class="menu-main">
           <div class="menu-category">
-            <h3><img src="img/logo.png" alt="ALUS BODE Logo">Uzkodas</h3>
+            <h3><img src="assets/desktop/logo/logo@3x.webp" alt="ALUS BODE Logo">Uzkodas</h3>
             <!--Food List-->
             <div class="menu-item-food">
-              <img src="img/menu/food/alus_plate.jpg" alt="alus plate" class="menu-img">
+              <img src="assets/desktop/menu/food/alus_plate@3x.webp" alt="alus plate" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Alus Plate</span>
                 <span class="price">7.20 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/onion_rings.jpg" alt="Sīpolu gredzeni" class="menu-img">
+              <img src="assets/desktop/menu/food/onion_rings@3x.webp" alt="Sīpolu gredzeni" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Sīpolu gredzeni</span>
                 <span class="price">3.20 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/onion_rings.jpg" alt="Kalmāru gredzeni" class="menu-img">
+              <img src="assets/desktop/menu/food/onion_rings@3x.webp" alt="Kalmāru gredzeni" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Kalmāru gredzeni</span>
                 <span class="price">3.80 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/garlic_breads.jpg" alt="Ķiploku grauzdiņi klasiskie" class="menu-img">
+              <img src="assets/desktop/menu/food/garlic_breads@3x.webp" alt="Ķiploku grauzdiņi klasiskie" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Ķiploku grauzdiņi klasiskie</span>
                 <span class="price">3.00 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/garlic_breads_cheese.jpg" alt="Ķiploku grauzdiņi ar sieru" class="menu-img">
+              <img src="assets/desktop/menu/food/garlic_breads_cheese@3x.webp" alt="Ķiploku grauzdiņi ar sieru" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Ķiploku grauzdiņi ar sieru</span>
                 <span class="price">3.50 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/chips.jpg" alt="Fri ar sieru" class="menu-img">
+              <img src="assets/desktop/menu/food/chips@3x.webp" alt="Fri ar sieru" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Fri ar sieru</span>
                 <span class="price">4.20 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/nuggets.jpg" alt="Nageti" class="menu-img">
+              <img src="assets/desktop/menu/food/nuggets@3x.webp" alt="Nageti" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Nageti</span>
                 <span class="price">3.30 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/cheese-balls.jpg" alt="Siera bumbas" class="menu-img">
+              <img src="assets/desktop/menu/food/cheese-balls@3x.webp" alt="Siera bumbas" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Siera bumbas</span>
                 <span class="price">3.80 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="img/menu/food/cheburek2.jpg" alt="Čebureks" class="menu-img">
+              <img src="assets/desktop/menu/food/cheburek2@3x.webp" alt="Čebureks" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Čebureks</span>
                 <span class="item-name">ar jēra un liellopa gaļu</span>
@@ -315,13 +328,13 @@
 
       <!-- Menu Bottom Section -->
       <div class="menu-footer">
-        <img src="img/menu/menu-back-bot.png" alt="Menu Footer Image" class="menu-footer-img">
+        <img src="assets/desktop/menu/menu-back-bot@3x.webp" alt="Menu Footer Image" class="menu-footer-img">
       </div>
     </section>
 
     <section class="contact fade-in" id="contacts">
-      <h2>Contact Us</h2>
-      <p>Visit us or call:<br />Phone: +371 25 313 331<br />Address: Tilta iela 2, Riga, Latvia, 1005</p>
+      <h2>Sazinieties ar mums</h2>
+      <p>Apmeklējiet mūs vai zvaniet:<br />Tālrunis: +371 25 313 331<br />Adrese: Tilta iela 2, Rīga, Latvija, LV-1005</p>
       <div style="position: relative;">
         <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;"><iframe
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" loading="lazy"
@@ -331,10 +344,10 @@
       </div>
       <div class="social-links">
         <a href="https://www.facebook.com/alusbode" target="_blank" rel="noopener" class="social-icon">
-          <img src="img/icons/face.png" alt="Facebook logo" />
+          <img src="assets/desktop/social/face@3x.webp" alt="Facebook logo" />
         </a>
         <a href="https://www.instagram.com/alusbode" target="_blank" rel="noopener" class="social-icon">
-          <img src="img/icons/insta.png" alt="Instagram logo" />
+          <img src="assets/desktop/social/insta@3x.webp" alt="Instagram logo" />
         </a>
       </div>
     </section>
@@ -343,11 +356,11 @@
   <footer class="footer">
     <div class="box-opac">
       <div class="box-items">
-        <img src="img/logo.png" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
+        <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
         <div>
-          <a href="#about">About</a>
-          <a href="#menu">Menu</a>
-          <a href="#contacts">Contacts</a>
+          <a href="#about">Par mums</a>
+          <a href="#menu">Ēdienkarte</a>
+          <a href="#contacts">Kontakti</a>
         </div>
         <br>
         <p>© 2025 ALUS BODE. All rights reserved.</p>

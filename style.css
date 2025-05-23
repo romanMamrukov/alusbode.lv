@@ -10,7 +10,7 @@
 body {
     font-family: 'EB Garamond', serif;
     letter-spacing: 0.5px;
-    background: url('img/background_wood.gif') no-repeat center center fixed;
+    background: url('assets/desktop/logo/background_wood@3x.webp') no-repeat center center fixed;
     background-size: cover;
     color: #000;
     min-height: 100vh;
@@ -26,7 +26,7 @@ body {
 .box-opac {
     text-align: center;
     padding: 10px;
-    background: url('img/background_wood.gif');
+    background: url('assets/desktop/logo/background_wood@3x.webp');
     background-size: cover;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -57,7 +57,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background: url('img/background_wood.gif') no-repeat center center fixed;
+    background: url('assets/desktop/logo/background_wood@3x.webp') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
     transition: 0.5s;
@@ -66,10 +66,9 @@ body {
 
 .overlay-content {
     position: relative;
-    top: 25%;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .nav-overlay a {
@@ -90,8 +89,9 @@ body {
 
 .nav-overlay .closebtn {
     position: absolute;
-    top: 20px;
-    right: 45px;
+    z-index: 2;
+    top: 0;
+    right: 25px;
     font-size: 60px;
 }
 
@@ -204,7 +204,7 @@ section {
 }
 
 .menu-container {
-    background: url(img/menu/menu-back-center.png) repeat-y center center;
+    background: url('assets/desktop/menu/menu-back-center@3x.webp') repeat-y center center;
     background-size: contain;
     margin-right: 3px;
 }
@@ -321,7 +321,7 @@ section {
     }
 
     .menu-container {
-        background: url('img/menu/menu-back-center.png') repeat-y center center;
+        background: url('assets/desktop/menu/menu-back-center@3x.webp') repeat-y center center;
         background-size: contain;
         padding: 0;
         width: 100%;
