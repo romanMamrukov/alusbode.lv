@@ -6,13 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Alus Bode - Dzīvā alus veikals</title>
-  <meta name="description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti.">
-  
+  <meta name="description"
+    content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti.">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.alusbode.lv/" />
   <meta property="og:title" content="Alus Bode - Dzīvā alus veikals" />
-  <meta property="og:description" content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti." />
+  <meta property="og:description"
+    content="Alus Bode piedāvā rūpīgi atlasītu alu un gardus ēdienus koka interjerā ar īpašu atmosfēru. Apskati mūsu dzērienu un ēdienu karti." />
   <meta property="og:image" content="https://www.alusbode.lv/assets/assets/desktop/logo/background_wood@3x.webp" />
 
   <!-- Twitter 
@@ -26,10 +28,11 @@
   <link rel="stylesheet" href="style.css" />
   <script src="mains.js" defer></script>
   <link rel="canonical" href="https://www.alusbode.lv/" />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet" />
-    
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" as="style"
+    onload="this.rel='stylesheet'" />
+
   <!-- Structured Data -->
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Bar",
@@ -99,22 +102,27 @@
 </head>
 
 <body>
-  <header class="header">
-    <div class="box-opac">
+  <header class="header" id="mainHeader">
+    <div class="box-opac" id="headerContent">
       <div class="box-items">
+        <!-- Curtain overlay menu -->
         <div id="myNav" class="nav-overlay">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
           <div class="overlay-content">
             <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
             <h2 class="title">ALUS BODE</h2>
             <a href="#about">Par mums</a>
-            <a href="#menu">Ēdienkarte</a>
+            <a href="#menu" data-menu="drinks">Dzērieni</a>
+            <a href="#menu" data-menu="food">Ēdienkarte</a>
             <a href="#contacts">Kontakti</a>
           </div>
         </div>
+
+        <!-- Sticky header content -->
         <span class="nav-icon" onclick="openNav()">&#9776;</span>
-        <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
-        <h1 class="title">ALUS BODE</h1>
+        <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals"
+          class="logo header-logo" />
+        <h1 class="title header-title">ALUS BODE</h1>
       </div>
     </div>
   </header>
@@ -124,7 +132,15 @@
       <h2>Laipni lūdzam</h2>
       <h2>ALUS BODE</h2>
       <p>Jūsu vietējais veikals ar svaigāko dzīvo alu.<br />Nogaršojiet tradīcijas kopā ar mums!</p>
-
+      <p><strong>Darba laiks:</strong><br />
+        Sestdiena: 11:00–22:00<br />
+        Svētdiena: 11:00–20:00<br />
+        Pirmdiena: Slēgts<br />
+        Otrdiena: Slēgts<br />
+        Trešdiena: 14:00–21:00<br />
+        Ceturtdiena: 14:00–21:00<br />
+        Piektdiena: 11:00–22:00
+      </p>
       <div class="carousel-container" role="region" aria-label="Image carousel">
         <img src="assets/desktop/carousel/1@3x.webp" class="carousel-image active" alt="Slide 1">
         <img src="assets/desktop/carousel/2@3x.webp" class="carousel-image" alt="Slide 2">
@@ -144,8 +160,8 @@
     <section class="menu-section fade-in" id="menu">
       <h2>Mūsu ēdienkarte</h2>
       <div class="menu-buttons">
-        <button type="button" onclick="showMenu('drinks')">Dzērieni</button>
-        <button type="button" onclick="showMenu('food')">Ēdieni</button>
+        <button id="drinksBtn" type="button">Dzērieni</button>
+        <button id="foodBtn" type="button">Ēdieni</button>
       </div>
 
       <!-- Menu Top Section (Header) -->
@@ -155,7 +171,7 @@
 
       <!-- Main Menu Section -->
       <!-- Drinks Menu -->
-      <div id="drinks-menu" class="menu-container">
+      <div id="drinks" class="menu-container">
         <div class="menu-main">
           <div class="menu-category">
             <h3><img src="assets/desktop/logo/beer_glass@3x.webp" alt="Beer glass Logo">Beer</h3>
@@ -164,94 +180,112 @@
               <img src="assets/desktop/menu/drinks/piebalgas_alus@3x.webp" alt="piebalgas alus logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Piebalgas Gaišais - 5.6%</span>
-                <span class="price">3.60 € (0.5L)</span>
-                <span class="price">6.00 € (1L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/bralis_gaisais_nefilt@3x.webp" alt="Bralis gaisais logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/bralis_gaisais_nefilt@3x.webp" alt="Bralis gaisais logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brālis Gaišais Nefiltr. - 5.3%</span>
-                <span class="price">2.90 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/rigas bruveris nefilt@3x.webp" alt="Rigas bruveris logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/rigas bruveris nefilt@3x.webp" alt="Rigas bruveris logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Rigas Bruveris Nefiltr. - 5.2%</span>
-                <span class="price">2.80 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/Brengulu_gaisais@3x.webp" alt="Brengulu gaisais logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Brengulu_gaisais@3x.webp" alt="Brengulu gaisais logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brengulu Gaišais Nefiltr. - 5.5%</span>
-                <span class="price">3.50 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
               <img src="assets/desktop/menu/drinks/uzavas_gaisais@3x.webp" alt="Užavas gaisais logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Uzavas Gaišais - 4.6%</span>
-                <span class="price">4.00 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/Ilgucema_Medalus@3x.webp" alt="Ilgucema Medalus logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Ilgucema_Medalus@3x.webp" alt="Ilgucema Medalus logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Medalus Ilguciema - 5.5%</span>
-                <span class="price">2.90 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/dzervenu_ilguciema@3x.webp" alt="Dzervenu Ilguciema logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/dzervenu_ilguciema@3x.webp" alt="Dzervenu Ilguciema logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Dzervenu Ilguciema - 5%</span>
-                <span class="price">3.30 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/Brengulu_tumsais@3x.webp" alt="Brengulu tumsais log" class="menu-img">
+              <img src="assets/desktop/menu/drinks/Brengulu_tumsais@3x.webp" alt="Brengulu tumsais log"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Brengulu Tumšais - 5.5%</span>
-                <span class="price">3.50 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
               <img src="assets/desktop/menu/drinks/piebalgas_alus@3x.webp" alt="Piebalgas alus logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Kraslavas Gaišais Nefiltr. - 5%</span>
-                <span class="price">2.80 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
           </div>
           <!--Beer List End-->
           <!--Cider / Kvass List-->
           <div class="menu-category">
-            <h3><img src="assets/desktop/logo/cider_glass@3x.webp" alt="Cider glass logo">Cidrs, Kvass</h3>
+            <h3><img src="assets/desktop/logo/cider_glass@3x.webp" alt="Cider glass logo">
+              Citi Dzērieni</h3>
             <div class="menu-item">
-              <img src="assets/desktop/menu/drinks/darza bumbieris sidrs@3x.webp" alt="Darza Bumbieris Sider logo" class="menu-img">
+              <img src="assets/desktop/menu/drinks/darza bumbieris sidrs@3x.webp" alt="Darza Bumbieris Sider logo"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Sidrs Somersby - 4.5%</span>
-                <span class="price">4.80 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
             <div class="menu-item">
               <img src="assets/desktop/menu/drinks/Ilgucema_kvass@3x.webp" alt="Ilgucema Kvass logo" class="menu-img">
               <div class="item-details">
                 <span class="item-name">Kvass</span>
-                <span class="price">1.50 € (0.5L)</span>
+                <!-- <span class="price">3.60 € (0.5L)</span> -->
               </div>
             </div>
           </div>
           <!--Cider / Kvass List End-->
           <!--Italian Drinks List-->
-          <p>ALKOHOLA LIETOŠANAI IR NEGATĪVA IETEKME.</p>
-          <p>TĀ PĀRDOŠAN, IEGĀDĀŠANĀS UN NODOŠANA NEPILNGADĪGĀM PERSONĀM IR AIZLIEGTA!</p>
+          <!-- <div class="menu-category">
+            <h3><img src="assets/desktop/logo/" alt="Category Alt name logo">Category Name</h3>
+            <div class="menu-item">
+              <img src="assets/desktop/menu/drinks/" alt="Item alt name logo"
+                class="menu-img">
+              <div class="item-details">
+                <span class="item-name">Item name</span>
+                 <span class="price">Item price</span>
+              </div>
+            </div>
+          </div> -->
+          <p class="warn-msg">ALKOHOLA LIETOŠANAI IR NEGATĪVA IETEKME.</p>
+          <p class="warn-msg">TĀ PĀRDOŠAN, IEGĀDĀŠANĀS UN NODOŠANA NEPILNGADĪGĀM PERSONĀM IR AIZLIEGTA!</p>
         </div>
       </div>
 
-      <div id="food-menu" class="menu-container hidden">
+      <div id="food" class="menu-container hidden">
         <div class="menu-main">
           <div class="menu-category">
             <h3><img src="assets/desktop/logo/logo@3x.webp" alt="ALUS BODE Logo">Uzkodas</h3>
@@ -278,14 +312,16 @@
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="assets/desktop/menu/food/garlic_breads@3x.webp" alt="Ķiploku grauzdiņi klasiskie" class="menu-img">
+              <img src="assets/desktop/menu/food/garlic_breads@3x.webp" alt="Ķiploku grauzdiņi klasiskie"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Ķiploku grauzdiņi klasiskie</span>
                 <span class="price">3.00 €</span>
               </div>
             </div>
             <div class="menu-item-food">
-              <img src="assets/desktop/menu/food/garlic_breads_cheese@3x.webp" alt="Ķiploku grauzdiņi ar sieru" class="menu-img">
+              <img src="assets/desktop/menu/food/garlic_breads_cheese@3x.webp" alt="Ķiploku grauzdiņi ar sieru"
+                class="menu-img">
               <div class="item-details">
                 <span class="item-name">Ķiploku grauzdiņi ar sieru</span>
                 <span class="price">3.50 €</span>
@@ -334,15 +370,36 @@
 
     <section class="contact fade-in" id="contacts">
       <h2>Sazinieties ar mums</h2>
-      <p>Apmeklējiet mūs vai zvaniet:<br />Tālrunis: +371 25 313 331<br />Adrese: Tilta iela 2, Rīga, Latvija, LV-1005</p>
-      <div style="position: relative;">
-        <div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;"><iframe
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" loading="lazy"
-            allowfullscreen src="https://maps.google.com/maps?q=Tilta+iela+2%2C+Riga%2C+Latvia&output=embed"></iframe>
-        </div><a href="https://tariffcalculator.us/" rel="noopener" target="_blank"
-          style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;">tariffcalculator.us</a>
+
+      <div class="contact-info">
+        <div class="contact-hours">
+          <h3>Darba laiks:</h3>
+          <ul>
+            <li>Sestdiena: 11:00–22:00</li>
+            <li>Svētdiena: 11:00–20:00</li>
+            <li>Pirmdiena: Slēgts</li>
+            <li>Otrdiena: Slēgts</li>
+            <li>Trešdiena: 14:00–21:00</li>
+            <li>Ceturtdiena: 14:00–21:00</li>
+            <li>Piektdiena: 11:00–22:00</li>
+          </ul>
+        </div>
+
+        <div class="contact-details">
+          <h3>Apmeklējiet mūs vai zvaniet:</h3>
+          <p><strong>Tālrunis:</strong> <a href="tel:+37125313331">+371 25 313 331</a></p>
+          <p><strong>Adrese:</strong> Tilta iela 2, Rīga, Latvija, LV-1005</p>
+        </div>
       </div>
-      <div class="social-links">
+
+      <div class="map-container" aria-label="Alus Bode atrašanās vieta kartē">
+        <iframe title="Alus Bode atrašanās vieta" loading="lazy"
+          src="https://maps.google.com/maps?q=Tilta+iela+2%2C+Riga%2C+Latvia&output=embed" style="border:0;"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="social-links" aria-label="Sociālie tīkli">
         <a href="https://www.facebook.com/alusbode" target="_blank" rel="noopener" class="social-icon">
           <img src="assets/desktop/social/face@3x.webp" alt="Facebook logo" />
         </a>
@@ -357,14 +414,10 @@
     <div class="box-opac">
       <div class="box-items">
         <img src="assets/desktop/logo/logo@3x.webp" alt="Alus Bode logo - Dzīvā alus veikals" class="logo" />
-        <div>
-          <a href="#about">Par mums</a>
-          <a href="#menu">Ēdienkarte</a>
-          <a href="#contacts">Kontakti</a>
-        </div>
         <br>
-        <p>© 2025 ALUS BODE. All rights reserved.</p>
-        <p>Created by <a href="https://romanmamrukov.github.io/romanmamrukov/" alt="Roman Mamrukov website" class="simple-a">Roman Mamrukov</a></p>
+        <p>© ANNO 2015 ALUS BODE</p>
+        <p>Created by <a href="https://romanmamrukov.github.io/romanmamrukov/" alt="Roman Mamrukov website"
+            class="simple-a">Roman Mamrukov</a></p>
       </div>
     </div>
   </footer>
