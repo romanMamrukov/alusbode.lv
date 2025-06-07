@@ -8,14 +8,31 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     font-family: 'EB Garamond', serif;
     letter-spacing: 0.5px;
-    background: url('assets/desktop/logo/background_wood@1x.webp') no-repeat center center fixed;
-    background-size: cover;
     color: #000;
     min-height: 100vh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+}
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    /* Your content styles */
 }
 
 a {
@@ -40,7 +57,7 @@ body {
 .box-opac {
     text-align: center;
     padding: 15px;
-    background: url('assets/desktop/logo/background_wood@1x.webp');
+    background: url('assets/desktop/logo/background_wood.webp');
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
@@ -86,6 +103,12 @@ body {
     transition: font-size 0.3s ease-in-out;
 }
 
+.nav-title {
+    font-size: 2rem;
+    color: #000;
+    text-shadow: 2px 2px 4px #444;
+}
+
 /* ==== SHRINK ON SCROLL ==== */
 .header.shrink .box-opac {
     padding: 5px 10px;
@@ -108,7 +131,7 @@ body {
     z-index: 2000;
     top: 0;
     left: 0;
-    background: url('assets/desktop/logo/background_wood@1x.webp') no-repeat center center fixed;
+    background: url('assets/desktop/logo/background_wood.webp') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
     transition: 0.5s;
@@ -344,6 +367,13 @@ section {
 }
 
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+    
+    .nav-overlay {
+        background-attachment: scroll;
+    }
 
     .menu-main {
         width: 100%;
